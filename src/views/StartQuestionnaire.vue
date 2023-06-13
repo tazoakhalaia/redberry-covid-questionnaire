@@ -11,7 +11,7 @@
       class="absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 w-40 break-all mt-24 text-center"
     >
       <transition name="start">
-        <router-link to="/" v-if="startText" class="font-bold text-3xl"
+        <router-link to="/identification" v-if="startText" class="font-bold text-3xl"
           >კითხვარის დაწყება</router-link
         >
       </transition>
@@ -36,4 +36,4 @@ onMounted(() => {
 })
 </script>
 
-<style scoped src="../assets/css/startquestionnaire.css"></style>
+<style scoped src="../assets/css/startQuestionnaire.css"></style>
