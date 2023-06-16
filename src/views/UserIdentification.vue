@@ -31,7 +31,7 @@
                   fieldClass="w-inputWidth h-12 border border-gray mt-10"
                   fieldName="email"
                   fieldType="text"
-                  fieldRules="required|email|redberry.ge"
+                  fieldRules="required|email|redberry_email"
                   fieldPlaceholder="მეილი"
                   v-model="userEmail"
                 />
