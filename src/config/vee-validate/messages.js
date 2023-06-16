@@ -1,6 +1,6 @@
 import { configure } from 'vee-validate'
-// import { localize, setLocale } from "@vee-validate/i18n";
-import { localize } from '@vee-validate/i18n'
+import { localize, setLocale } from "@vee-validate/i18n";
+// import { localize } from '@vee-validate/i18n'
 import en from '@vee-validate/i18n/dist/locale/en.json'
 import ka from '@vee-validate/i18n/dist/locale/ka.json'
 
@@ -44,4 +44,4 @@ configure({
   }),
 })
 
-// setLocale("ka"); // with this function we can change the locale
+setLocale("ka"); // with this function we can change the locale

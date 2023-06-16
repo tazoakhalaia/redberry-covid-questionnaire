@@ -13,6 +13,7 @@
                   type="text"
                   rules="required|min:2"
                   placeholder="სახელი"
+                  v-model="userName"
                 /><br />
                 <ErrorMessage name="name" />
               </div>
@@ -23,6 +24,7 @@
                   type="text"
                   rules="required|min:2"
                   placeholder="გვარი"
+                  v-model="lastName"
                 /><br />
                 <ErrorMessage name="lastname" />
               </div>
@@ -33,18 +35,25 @@
                   type="email"
                   rules="required|email|redberry_email"
                   placeholder="fbi@redberry.ge"
+                  v-model="userEmail"
                 /><br />
                 <ErrorMessage name="email" />
               </div>
-              <button class="absolute right-0 bottom-24 mr-negative text-3xl">></button>
+              <button class="absolute z-10 right-0 bottom-24 mr-negative text-3xl">></button>
             </Form>
             <div class="h-lineHeight w-56 mt-20 bg-black"></div>
             <div class="mt-10">
               <h1 class="text-gray-600 w-72">*-ით მონიშნული ველების შევსება სავალდებულოა</h1>
             </div>
           </div>
-          <div>
+          <div class="relative">
             <idetifyImg class="mt-imagePos" />
+            <transition name="idetifyLogo">
+              <IdentifyPageLogo
+                v-if="identifyPage"
+                class="absolute top-44 w-idetifyLogo left-28 opacity-50"
+              />
+            </transition>
           </div>
         </div>
       </div>
@@ -52,13 +61,24 @@
   </div>
 </template>
 <script setup>
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 import PageHeader from '@/components/shared/PageHeader.vue'
 import { Field, Form, ErrorMessage } from 'vee-validate'
 import idetifyImg from '@/assets/image/identifyImg.vue'
+import IdentifyPageLogo from '@/assets/image/IdentifyPageLogo.vue'
+import '@/assets/css/userIdentificationPage.css'
 let firstPage = ref(1)
+let identifyPage = ref(false)
+let userName = ref('')
+let lastName = ref('')
+let userEmail = ref('')
+onMounted(() => {
+  identifyPage.value = true
+})
 function onSubmit(values) {
   console.log(values)
+  localStorage.setItem('name', userName.value)
+  localStorage.setItem('lastname', lastName.value)
+  localStorage.setItem('email', userEmail.value)
 }
 </script>
-<style lang=""></style>
