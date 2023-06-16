@@ -13,7 +13,7 @@
   </div>
 </template>
 <script setup>
-import RedberryImage from '../../assets/image/RedBerryImage.vue'
+import RedberryImage from '@/assets/image/RedBerryImage.vue'
 defineProps({
   pageNumber: {
     type: String,

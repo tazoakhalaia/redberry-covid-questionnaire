@@ -7,37 +7,34 @@
           <div class="w-1/2 h-screen relative">
             <Form class="mt-20" @submit="onSubmit">
               <div>
-                <Field
-                  class="w-inputWidth h-12 border border-gray"
-                  name="name"
-                  type="text"
-                  rules="required|min:2"
-                  placeholder="სახელი"
+                <Input
+                  fieldClass="w-inputWidth h-12 border border-gray"
+                  fieldName="name"
+                  fieldType="text"
+                  fieldRules="required|min:2"
+                  fieldPlaceholder="სახელი"
                   v-model="userName"
-                /><br />
-                <ErrorMessage name="name" />
+                />
               </div>
               <div>
-                <Field
-                  class="w-inputWidth mt-20 h-12 border border-gray"
-                  name="lastname"
-                  type="text"
-                  rules="required|min:2"
-                  placeholder="გვარი"
+                <Input
+                  fieldClass="w-inputWidth h-12 border border-gray mt-10"
+                  fieldName="lastname"
+                  fieldType="text"
+                  fieldRules="required|min:2"
+                  fieldPlaceholder="გვარი"
                   v-model="lastName"
-                /><br />
-                <ErrorMessage name="lastname" />
+                />
               </div>
               <div>
-                <Field
-                  class="w-inputWidth mt-20 h-12 border border-gray"
-                  name="email"
-                  type="email"
-                  rules="required|email|redberry_email"
-                  placeholder="fbi@redberry.ge"
+                <Input
+                  fieldClass="w-inputWidth h-12 border border-gray mt-10"
+                  fieldName="email"
+                  fieldType="text"
+                  fieldRules="required|email|redberry.ge"
+                  fieldPlaceholder="მეილი"
                   v-model="userEmail"
-                /><br />
-                <ErrorMessage name="email" />
+                />
               </div>
               <button class="absolute z-10 right-0 bottom-24 mr-negative text-3xl">></button>
             </Form>
@@ -63,10 +60,11 @@
 <script setup>
 import { ref, onMounted } from 'vue'
 import PageHeader from '@/components/shared/PageHeader.vue'
-import { Field, Form, ErrorMessage } from 'vee-validate'
+import { Form } from 'vee-validate'
 import idetifyImg from '@/assets/image/identifyImg.vue'
-import IdentifyPageLogo from '@/assets/image/IdentifyPageLogo.vue'
+import IdentifyPageLogo from '@/components/icons/IconLogoPage.vue'
 import '@/assets/css/userIdentificationPage.css'
+import Input from '@/components/ui/formField..vue'
 let firstPage = ref(1)
 let identifyPage = ref(false)
 let userName = ref('')
