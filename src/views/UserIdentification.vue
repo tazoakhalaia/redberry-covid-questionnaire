@@ -64,7 +64,7 @@ import { Form } from 'vee-validate'
 import idetifyImg from '@/assets/image/identifyImg.vue'
 import IdentifyPageLogo from '@/components/icons/IconLogoPage.vue'
 import '@/assets/css/userIdentificationPage.css'
-import Input from '@/components/ui/formField..vue'
+import Input from '@/components/ui/FormField..vue'
 let firstPage = ref(1)
 let identifyPage = ref(false)
 let userName = ref('')
