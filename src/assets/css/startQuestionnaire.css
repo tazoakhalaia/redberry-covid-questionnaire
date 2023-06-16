@@ -1,0 +1,25 @@
+.image-enter-from {
+    width: 100%;
+    height: 100%;
+    transform: scale(5);
+  }
+  
+  .image-enter-to {
+    width: 112px;
+    height: 112px;
+  }
+  
+  .image-enter-active {
+    transition: all 0.5s ease-in-out;
+  }
+  
+  .start-enter-from {
+    opacity: 0;
+  }
+  
+  .start-enter-to {
+    opacity: 1;
+  }
+  .start-enter-active {
+    transition: all 2s ease-in-out;
+  }
