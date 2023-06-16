@@ -21,8 +21,8 @@
 
 <script setup>
 import { ref, onMounted } from 'vue'
-import StartQuestionnaireImage from '../assets/image/StartQuestionnaireImage.vue'
-import '../assets/css/startQuestionnaire.css'
+import StartQuestionnaireImage from '@/assets/image/StartQuestionnaireImage.vue'
+import '@/assets/css/startQuestionnaire.css'
 let mainImageshow = ref(false)
 let startText = ref(false)
 onMounted(() => {
