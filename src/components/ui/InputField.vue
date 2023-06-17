@@ -1,38 +1,37 @@
 <template>
   <div>
     <Field
-      :class="fieldClass"
-      :name="fieldName"
-      :type="fieldType"
-      :rules="fieldRules"
-      :placeholder="fieldPlaceholder"
+      :class="className"
+      :name="name"
+      :type="type"
+      :rules="rules"
+      :placeholder="placeholder"
     /><br />
-    <ErrorMessage :name="fieldName" />
+    <ErrorMessage :name="name" />
   </div>
 </template>
 <script setup>
 import { Field, ErrorMessage } from 'vee-validate'
 defineProps({
-  fieldClass: {
+  className: {
     type: String,
     required: true,
   },
-  fieldName: {
+  name: {
     type: String,
     required: true,
   },
-  fieldType: {
+  type: {
     type: String,
     required: true,
   },
-  fieldRules: {
+  rules: {
     type: String,
     required: true,
   },
-  fieldPlaceholder: {
+  placeholder: {
     type: String,
     required: true,
   },
 })
 </script>
-<style lang=""></style>

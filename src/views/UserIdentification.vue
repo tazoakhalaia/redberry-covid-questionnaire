@@ -8,35 +8,35 @@
             <Form class="mt-20" @submit="onSubmit">
               <div>
                 <Input
-                  fieldClass="w-inputWidth h-12 border border-gray"
-                  fieldName="name"
-                  fieldType="text"
-                  fieldRules="required|min:2"
-                  fieldPlaceholder="სახელი"
+                  className="w-inputWidth h-12 border border-gray mt-10"
+                  name="name"
+                  type="text"
+                  rules="required|min:2"
+                  placeholder="სახელი"
                   v-model="userName"
                 />
               </div>
               <div>
                 <Input
-                  fieldClass="w-inputWidth h-12 border border-gray mt-10"
-                  fieldName="lastname"
-                  fieldType="text"
-                  fieldRules="required|min:2"
-                  fieldPlaceholder="გვარი"
+                  className="w-inputWidth h-12 border border-gray mt-20"
+                  name="lastname"
+                  type="text"
+                  rules="required|min:2"
+                  placeholder="გვარი"
                   v-model="lastName"
                 />
               </div>
               <div>
                 <Input
-                  fieldClass="w-inputWidth h-12 border border-gray mt-10"
-                  fieldName="email"
-                  fieldType="text"
-                  fieldRules="required|email|redberry_email"
-                  fieldPlaceholder="მეილი"
+                  className="w-inputWidth h-12 border border-gray mt-20"
+                  name="email"
+                  type="text"
+                  rules="required|email|redberry_email"
+                  placeholder="მეილი"
                   v-model="userEmail"
                 />
               </div>
-              <button class="absolute z-10 right-0 bottom-24 mr-negative text-3xl">></button>
+              <Button />
             </Form>
             <div class="h-lineHeight w-56 mt-20 bg-black"></div>
             <div class="mt-10">
@@ -59,12 +59,13 @@
 </template>
 <script setup>
 import { ref, onMounted } from 'vue'
-import PageHeader from '@/components/shared/PageHeader.vue'
+import PageHeader from '@/components/shared/TheHeader.vue'
 import { Form } from 'vee-validate'
 import idetifyImg from '@/assets/image/identifyImg.vue'
 import IdentifyPageLogo from '@/components/icons/IconLogoPage.vue'
 import '@/assets/css/userIdentificationPage.css'
-import Input from '@/components/ui/FormField..vue'
+import Input from '@/components/ui/InputField.vue'
+import Button from '../components/ui/ButtonField.vue'
 let firstPage = ref(1)
 let identifyPage = ref(false)
 let userName = ref('')
