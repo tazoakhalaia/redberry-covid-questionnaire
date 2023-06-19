@@ -65,7 +65,7 @@ import idetifyImg from '@/assets/image/identifyImg.vue'
 import IdentifyPageLogo from '@/components/icons/IconLogoPage.vue'
 import '@/assets/css/userIdentificationPage.css'
 import Input from '@/components/ui/InputField.vue'
-import Button from '@/components/ui/ButtonField.vue'
+import Button from '@/components/ui/ButtonSubmit.vue'
 let firstPage = ref(1)
 let identifyPage = ref(false)
 let userName = ref('')
