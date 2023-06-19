@@ -1,0 +1,10 @@
+.idetifyLogo-enter-from {
+    width: 20px;
+  }
+  .idetifyLogo-enter-to {
+    width: 650px;
+    height: 75px;
+  }
+  .idetifyLogo-enter-active {
+    transition: all 0.5s ease-in-out;
+  }
