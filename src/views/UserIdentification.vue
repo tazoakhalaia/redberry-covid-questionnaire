@@ -36,7 +36,7 @@
                   v-model="userEmail"
                 />
               </div>
-              <Button />
+              <Button class="absolute z-10 right-0 bottom-24 mr-negative text-3xl" />
             </Form>
             <div class="h-lineHeight w-56 mt-20 bg-black"></div>
             <div class="mt-10">
@@ -66,18 +66,21 @@ import IdentifyPageLogo from '@/components/icons/IconLogoPage.vue'
 import '@/assets/css/userIdentificationPage.css'
 import Input from '@/components/ui/InputField.vue'
 import Button from '@/components/ui/ButtonSubmit.vue'
+import { useRouter } from 'vue-router'
 let firstPage = ref(1)
 let identifyPage = ref(false)
 let userName = ref('')
 let lastName = ref('')
 let userEmail = ref('')
+let router = useRouter()
 onMounted(() => {
   identifyPage.value = true
 })
 function onSubmit(values) {
   console.log(values)
-  localStorage.setItem('name', userName.value)
-  localStorage.setItem('lastname', lastName.value)
-  localStorage.setItem('email', userEmail.value)
+  localStorage.setItem('name', values.name)
+  localStorage.setItem('lastname', values.lastname)
+  localStorage.setItem('email', values.email)
+  router.push({ path: 'covid-questions' })
 }
 </script>
