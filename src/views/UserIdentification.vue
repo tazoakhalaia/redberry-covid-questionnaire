@@ -36,7 +36,7 @@
                   v-model="userEmail"
                 />
               </div>
-              <Button class="absolute z-10 right-0 bottom-24 mr-negative text-3xl" />
+              <Button />
             </Form>
             <div class="h-lineHeight w-56 mt-20 bg-black"></div>
             <div class="mt-10">

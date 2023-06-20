@@ -7,7 +7,7 @@
           <Form @submit="onSobmit">
             <h1>გაქვს გადატანილი კოვიდ 19?</h1>
             <div class="flex">
-              <RadioInput
+              <InputRadio
                 className="mr-2"
                 name="had_covid"
                 type="radio"
@@ -19,7 +19,7 @@
               კი
             </div>
             <div class="flex">
-              <RadioInput
+              <InputRadio
                 className="mr-2"
                 name="had_covid"
                 type="radio"
@@ -31,7 +31,7 @@
               არა
             </div>
             <div class="flex">
-              <RadioInput
+              <InputRadio
                 className="mr-2"
                 name="had_covid"
                 type="radio"
@@ -46,7 +46,7 @@
             <div v-if="show" class="mt-4">
               <h1>ანტისხეულების ტესტი გაქვს გაკეთებული?*</h1>
               <div class="flex">
-                <RadioInput
+                <InputRadio
                   className="mr-2"
                   name="had_antibody_test"
                   value="yes"
@@ -57,7 +57,7 @@
                 კი
               </div>
               <div class="flex">
-                <RadioInput
+                <InputRadio
                   className="mr-2"
                   name="had_antibody_test"
                   value="no"
@@ -95,7 +95,7 @@
                 />
               </div>
             </div>
-            <Button class="absolute z-10 right-0 bottom-0 text-3xl" />
+            <Button />
           </Form>
         </div>
         <div class="w-1/2 relative">
@@ -112,7 +112,7 @@
 import { ref } from 'vue'
 import PageHeader from '@/components/shared/TheHeader.vue'
 import { Form, ErrorMessage } from 'vee-validate'
-import RadioInput from '@/components/ui/RadioInput.vue'
+import InputRadio from '@/components/ui/InputRadio.vue'
 import Input from '@/components/ui/InputField.vue'
 import Button from '@/components/ui/ButtonSubmit.vue'
 import VaccinateImage from '@/assets/image/VaccinateImage.vue'
