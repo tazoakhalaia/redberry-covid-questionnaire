@@ -27,14 +27,15 @@
               არა
             </div>
             <ErrorMessage name="had_vaccine" />
-            <div v-if="vaccinationStage">
+            <div v-if="vaccinationStage" class="mt-2">
               <h1>აირჩიე რა ეტაპზე ხარ*</h1>
-              <div class="flex">
+              <div class="flex mt-4">
                 <InputRadio
                   name="vaccination_stage"
                   rules="required"
                   value="first_dosage_and_registered_on_the_second"
                   type="radio"
+                  @input="vaccinationRegistration"
                 />
                 პირველი დოზა და დარეგისტრირებული ვარ მეორეზე
               </div>
@@ -44,6 +45,7 @@
                   rules="required"
                   value="I_am_fully_vaccinated"
                   type="radio"
+                  @input="vaccinationRegistration"
                 />
                 სრულად აცრილი ვარ
               </div>
@@ -53,9 +55,54 @@
                   rules="required"
                   value="First_dose_and_not_signed_up_for_another"
                   type="radio"
+                  @input="vaccinationRegistration"
                 />
                 პირველი დოზა და არ დავრეგისტრირებულვარ მეორეზე
               </div>
+            </div>
+            <div v-if="onlyFirstDose" class="w-72 mt-4">
+              <h1>
+                რომ არ გადადო, ბარემ ახლავე დარეგისტრირდი
+                <span class="text-blue-500 decoration-solid">https://booking.moh.gov.ge/</span>
+              </h1>
+            </div>
+            <div v-if="noVaccinate" class="mt-4">
+              <h1>რას ელოდები?*</h1>
+              <div class="flex">
+                <InputRadio
+                  name="no_vaccination_stage"
+                  rules="required"
+                  value="i_am_waiting"
+                  type="radio"
+                  @input="notVaccinateUser"
+                />
+                დარეგისტრირებული ვარ და ველოდები რიცხვს
+              </div>
+              <div class="flex">
+                <InputRadio
+                  name="no_vaccination_stage"
+                  rules="required"
+                  value="i_dont_want_to_vaccinate"
+                  type="radio"
+                  @input="notVaccinateUser"
+                />
+                არ ვგეგმავ
+              </div>
+              <div class="flex">
+                <InputRadio
+                  name="no_vaccination_stage"
+                  rules="required"
+                  value="I_have_been_transferred_and_plan_to_get_vaccinated"
+                  type="radio"
+                  @input="notVaccinateUser"
+                />
+                გადატანილი მაქვს და ვგეგმავ აცრას
+              </div>
+            </div>
+            <div v-if="notInPlan">
+              <a href="https://booking.moh.gov.ge/" class="text-blue-500"
+                >👉 https://booking.moh.gov.ge/</a
+              >
             </div>
             <Button />
           </Form>
@@ -73,6 +120,9 @@ import Button from '@/components/ui/ButtonSubmit.vue'
 import { Form, ErrorMessage } from 'vee-validate'
 let thirdpage = ref('3')
 let vaccinationStage = ref(false)
+let onlyFirstDose = ref(false)
+let noVaccinate = ref(false)
+let notInPlan = ref(false)
 
 function onSubmit(value) {
   console.log(value)
@@ -84,8 +134,35 @@ function updateVaccine(value) {
   console.log('input ' + value.target.value)
   if (value.target.value === 'yes') {
     vaccinationStage.value = true
+    notInPlan.value = false
+  } else if (value.target.value === 'no') {
+    onlyFirstDose.value = false
+    vaccinationStage.value = false
   } else {
     vaccinationStage.value = false
+  }
+
+  if (value.target.value === 'no') {
+    noVaccinate.value = true
+  } else {
+    noVaccinate.value = false
+  }
+}
+
+function vaccinationRegistration(value) {
+  console.log(value.target.value)
+  if (value.target.value === 'First_dose_and_not_signed_up_for_another') {
+    onlyFirstDose.value = true
+  } else {
+    onlyFirstDose.value = false
+  }
+}
+
+function notVaccinateUser(value) {
+  if (value.target.value === 'i_dont_want_to_vaccinate') {
+    notInPlan.value = true
+  } else {
+    notInPlan.value = false
   }
 }
 </script>
