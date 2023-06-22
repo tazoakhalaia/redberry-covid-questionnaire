@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import StartQuestionnaire from '@/views/StartQuestionnaire.vue'
 import UserIdentification from '@/views/UserIdentification.vue'
 import HadCovid from '@/views/HadCovid.vue'
+import HadVaccine from '@/views/HadVaccine.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -20,6 +21,11 @@ const router = createRouter({
       path: '/covid-questions',
       name: 'CovidQuestions',
       component: HadCovid,
+    },
+    {
+      path: '/had-vaccine',
+      name: 'HadVaccine',
+      component: HadVaccine,
     },
   ],
 })

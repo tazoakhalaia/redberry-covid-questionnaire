@@ -32,6 +32,7 @@ defineProps({
   },
   modelValue: {
     type: String,
+    required: true,
   },
 })
 </script>

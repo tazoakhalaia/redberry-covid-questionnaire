@@ -1,7 +1,7 @@
 <template>
   <div class="w-screen h-screen flex justify-center items-center overflow-x-hidden">
     <div class="w-11/12 h-5/6">
-      <PageHeader :pageNumber="firstPage" />
+      <PageHeader :pageNumber="secondPage" />
       <div class="flex">
         <div class="w-1/2 relative">
           <Form @submit="onSobmit">
@@ -118,7 +118,9 @@ import Button from '@/components/ui/ButtonSubmit.vue'
 import VaccinateImage from '@/assets/image/VaccinateImage.vue'
 import IconRedBall from '@/components/icons/IconRedBall.vue'
 import '@/assets/css/CovidQuestions.css'
-let firstPage = ref('2')
+import { useRouter } from 'vue-router'
+let router = useRouter()
+let secondPage = ref('2')
 let covidResult = ref('')
 let show = ref(false)
 let antibodiesShow = ref(false)
@@ -132,6 +134,7 @@ function onSobmit(value) {
   localStorage.setItem('test_date', value.test_date)
   localStorage.setItem('number', value.number)
   localStorage.setItem('date', value.date)
+  router.push({ path: '/had-vaccine' })
 }
 function updateShow(value) {
   if (value.target.value === 'yes') {
