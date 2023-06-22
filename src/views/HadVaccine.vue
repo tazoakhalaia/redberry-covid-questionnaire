@@ -2,7 +2,7 @@
   <div class="w-screen h-screen flex justify-center items-center">
     <div class="w-11/12 h-5/6">
       <PageHeader :pageNumber="thirdpage" />
-      <div class="flex">
+      <div class="flex mt-20">
         <div class="w-1/2 relative">
           <Form @submit="onSubmit">
             <h1>უკვე აცრილი ხარ?</h1>
@@ -107,22 +107,35 @@
             <Button />
           </Form>
         </div>
-        <div class="w-1/2">left</div>
+        <div class="w-1/2 mb-20 relative">
+          <DoctorImage class="relative z-10" />
+          <transition name="star">
+            <IconStar class="absolute -top-10 z-0 left-16 w-56 h-80" v-if="starAnimation" />
+          </transition>
+        </div>
       </div>
     </div>
   </div>
 </template>
 <script setup>
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 import PageHeader from '@/components/shared/TheHeader.vue'
 import InputRadio from '@/components/ui/InputRadio.vue'
 import Button from '@/components/ui/ButtonSubmit.vue'
 import { Form, ErrorMessage } from 'vee-validate'
+import DoctorImage from '@/assets/image/DoctorImage.vue'
+import IconStar from '@/components/icons/IconStar.vue'
+import '@/assets/css/HadVaccine.css'
+let starAnimation = ref(false)
 let thirdpage = ref('3')
 let vaccinationStage = ref(false)
 let onlyFirstDose = ref(false)
 let noVaccinate = ref(false)
 let notInPlan = ref(false)
+
+onMounted(() => {
+  starAnimation.value = true
+})
 
 function onSubmit(value) {
   console.log(value)

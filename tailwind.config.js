@@ -11,8 +11,8 @@ module.exports = {
         lineHeight: '1px',
       },
       margin: {
-        negative: '-100px',
-      }
+        negative: '0',
+      },
     },
   },
   plugins: [],
