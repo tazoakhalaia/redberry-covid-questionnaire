@@ -1,57 +1,44 @@
-# covid-questionnaire
+<h1>The Covid Questionnaire</h1>
+<p>The Covid Questionnaire application is a user-friendly tool designed to help individuals assess their symptoms and potential risk factors associated with COVID-19. By answering a series of questions, users receive personalized recommendations and guidance based on their responses. The application empowers individuals to make informed decisions about their health, such as seeking medical attention or following specific protocols recommended by health authorities. With a focus on user experience, the Covid Questionnaire provides a seamless and intuitive interface for users to monitor their health status and take appropriate actions to protect themselves and others. It serves as a valuable resource in promoting individual well-being and proactive management of COVID-19 concerns.</p>
 
-This template should help get you started developing with Vue 3 in Vite.
 
-## Recommended IDE Setup
+<h1>Table of Contents</h1>
+Prerequisites</br>
+Tech Stack</br>
+Getting Started</br>
+Development</br>
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+<h3 align="left">Prerequisites:</h3>
+<a href="https://vuejs.org/" target="_blank" rel="noreferrer"> <img src="https://avatars.githubusercontent.com/u/6128107?s=280&v=4" alt="vuejs" width="40" height="40"/> </a> 
+<a> <img src="https://github.com/RedberryInternship/example-project-laravel/blob/master/readme/assets/npm.png?raw=true" alt="npm" width="40" height="40"/> </a>
 
-## Customize configuration
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+<h3 align="left">Tech stack:</h3>
+<a href="https://www.i18next.com/" target="_blank" rel="noreferrer"> <img src="https://vue-i18n.intlify.dev/vue-i18n-logo.svg" alt="i18n" width="40" height="40"/> </a>
+<a> <img src="https://avatars.githubusercontent.com/u/67109815?s=280&v=4"  width="40" height="40"/> </a>
 
-## Project Setup
+<h3>Getting started</h3>
 
-```sh
-npm install
-```
+1. Clone repository
+   ```
+   git clone https://github.com/RedberryInternship/tamazi-akhalaia-covid-questionnaire.git
+   ```
 
-### Compile and Hot-Reload for Development
+2. Navigate to the project directory:
+   ```
+   cd tamazi-akhalaia-covid-questionnaire
+   ```
+3. Install project dependencies:
+   ```
+   npm install
+   ```
+<h3>Development</h3>
 
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Run Headed Component Tests with [Cypress Component Testing](https://on.cypress.io/component)
-
-```sh
-npm run test:unit:dev # or `npm run test:unit` for headless testing
-```
-
-### Run End-to-End Tests with [Cypress](https://www.cypress.io/)
-
-```sh
-npm run test:e2e:dev
-```
-
-This runs the end-to-end tests against the Vite development server.
-It is much faster than the production build.
-
-But it's still recommended to test the production build with `test:e2e` before deploying (e.g. in CI environments):
-
-```sh
-npm run build
-npm run test:e2e
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
+1. To start the development server, run the following command:
+   ```
+   npm run dev
+   ```
+2. To build the project for production, run the following command:
+   ```
+   npm run build
+   ```
