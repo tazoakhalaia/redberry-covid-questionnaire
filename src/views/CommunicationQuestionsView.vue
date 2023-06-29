@@ -144,7 +144,7 @@
 <script setup>
 import PageHeader from '@/components/shared/TheHeader.vue'
 import InputRadio from '@/components/ui/InputRadio.vue'
-import TextArea from '@/components/ui/TextArea.vue'
+import TextArea from '@/components/ui/InputTextArea.vue'
 import { ErrorMessage, Form } from 'vee-validate'
 import '@/assets/css/CommunicationQuestions.css'
 import axios from '@/plugins/axios/axios'
