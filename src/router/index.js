@@ -1,8 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import StartQuestionnaire from '@/views/StartQuestionnaire.vue'
-import UserIdentification from '@/views/UserIdentification.vue'
-import HadCovid from '@/views/HadCovid.vue'
-import HadVaccine from '@/views/HadVaccine.vue'
+import StartQuestionnaire from '@/views/StartQuestionnaireView.vue'
+import UserIdentification from '@/views/UserIdentificationView.vue'
+import HadCovid from '@/views/HadCovidView.vue'
+import HadVaccine from '@/views/HadVaccineView.vue'
 import CommunicationQuestions from '@/views/CommunicationQuestionsView.vue'
 
 const router = createRouter({
