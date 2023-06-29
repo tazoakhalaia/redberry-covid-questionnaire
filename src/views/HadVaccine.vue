@@ -10,7 +10,7 @@
               <InputRadio
                 name="had_vaccine"
                 rules="required"
-                value="yes"
+                value="1"
                 type="radio"
                 @input="updateVaccine"
               />
@@ -20,7 +20,7 @@
               <InputRadio
                 name="had_vaccine"
                 rules="required"
-                value="no"
+                value="0"
                 type="radio"
                 @input="updateVaccine"
               />
@@ -43,7 +43,7 @@
                 <InputRadio
                   name="vaccination_stage"
                   rules="required"
-                  value="I_am_fully_vaccinated"
+                  value="fully_vaccinated"
                   type="radio"
                   @input="vaccinationRegistration"
                 />
@@ -53,7 +53,7 @@
                 <InputRadio
                   name="vaccination_stage"
                   rules="required"
-                  value="First_dose_and_not_signed_up_for_another"
+                  value="first_dosage_and_not_registered_ye"
                   type="radio"
                   @input="vaccinationRegistration"
                 />
@@ -70,9 +70,9 @@
               <h1>რას ელოდები?*</h1>
               <div class="flex">
                 <InputRadio
-                  name="no_vaccination_stage"
+                  name="waiting"
                   rules="required"
-                  value="i_am_waiting"
+                  value="registered_and_waiting"
                   type="radio"
                   @input="notVaccinateUser"
                 />
@@ -80,9 +80,9 @@
               </div>
               <div class="flex">
                 <InputRadio
-                  name="no_vaccination_stage"
+                  name="waiting"
                   rules="required"
-                  value="i_dont_want_to_vaccinate"
+                  value="not_planning"
                   type="radio"
                   @input="notVaccinateUser"
                 />
@@ -90,9 +90,9 @@
               </div>
               <div class="flex">
                 <InputRadio
-                  name="no_vaccination_stage"
+                  name="waiting"
                   rules="required"
-                  value="I_have_been_transferred_and_plan_to_get_vaccinated"
+                  value="had_covid_and_planning_to_be_vaccinated"
                   type="radio"
                   @input="notVaccinateUser"
                 />
@@ -126,12 +126,14 @@ import { Form, ErrorMessage } from 'vee-validate'
 import DoctorImage from '@/assets/image/DoctorImage.vue'
 import IconStar from '@/components/icons/IconStar.vue'
 import '@/assets/css/HadVaccine.css'
+import { useRouter } from 'vue-router'
 let starAnimation = ref(false)
 let thirdpage = ref('3')
 let vaccinationStage = ref(false)
 let onlyFirstDose = ref(false)
 let noVaccinate = ref(false)
 let notInPlan = ref(false)
+let router = useRouter()
 
 onMounted(() => {
   starAnimation.value = true
@@ -141,21 +143,23 @@ function onSubmit(value) {
   console.log(value)
   localStorage.setItem('had_vaccine', value.had_vaccine)
   localStorage.setItem('vaccination_stage', value.vaccination_stage)
+  localStorage.setItem('waiting', value.waiting)
+  router.push({ path: '/communication-questions' })
 }
 
 function updateVaccine(value) {
   console.log('input ' + value.target.value)
-  if (value.target.value === 'yes') {
+  if (value.target.value === '1') {
     vaccinationStage.value = true
     notInPlan.value = false
-  } else if (value.target.value === 'no') {
+  } else if (value.target.value === '0') {
     onlyFirstDose.value = false
     vaccinationStage.value = false
   } else {
     vaccinationStage.value = false
   }
 
-  if (value.target.value === 'no') {
+  if (value.target.value === '0') {
     noVaccinate.value = true
   } else {
     noVaccinate.value = false

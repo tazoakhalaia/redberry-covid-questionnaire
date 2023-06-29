@@ -35,7 +35,7 @@
                 className="mr-2"
                 name="had_covid"
                 type="radio"
-                value="now have"
+                value="have_right_now "
                 rules="required"
                 v-model="covidResult"
                 @input="updateShow"
