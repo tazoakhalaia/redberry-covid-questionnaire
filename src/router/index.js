@@ -1,8 +1,10 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import StartQuestionnaire from '@/views/StartQuestionnaire.vue'
-import UserIdentification from '@/views/UserIdentification.vue'
-import HadCovid from '@/views/HadCovid.vue'
-import HadVaccine from '@/views/HadVaccine.vue'
+import StartQuestionnaire from '@/views/StartQuestionnaireView.vue'
+import UserIdentification from '@/views/UserIdentificationView.vue'
+import HadCovid from '@/views/HadCovidView.vue'
+import HadVaccine from '@/views/HadVaccineView.vue'
+import CommunicationQuestions from '@/views/CommunicationQuestionsView.vue'
+import ThanksPageViewVue from '@/views/ThanksPageView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -26,6 +28,16 @@ const router = createRouter({
       path: '/had-vaccine',
       name: 'HadVaccine',
       component: HadVaccine,
+    },
+    {
+      path: '/communication-questions',
+      name: 'CommunicationQuestions',
+      component: CommunicationQuestions,
+    },
+    {
+      path: '/thanks',
+      name: 'ThanksPageView',
+      component: ThanksPageViewVue,
     },
   ],
 })
