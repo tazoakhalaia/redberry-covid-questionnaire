@@ -4,7 +4,7 @@ import UserIdentification from '@/views/UserIdentificationView.vue'
 import HadCovid from '@/views/HadCovidView.vue'
 import HadVaccine from '@/views/HadVaccineView.vue'
 import CommunicationQuestions from '@/views/CommunicationQuestionsView.vue'
-import ThanksPageViewVue from '../views/ThanksPageView.vue'
+import ThanksPageViewVue from '@/views/ThanksPageView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
