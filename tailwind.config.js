@@ -15,6 +15,7 @@ module.exports = {
       },
       backgroundColor: {
         finishColor: '#208298',
+        lastPageBg: '#232323'
       },
     },
   },

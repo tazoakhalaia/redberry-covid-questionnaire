@@ -136,7 +136,14 @@
             </button>
           </Form>
         </div>
-        <div class="w-1/2 relative">right</div>
+        <div class="w-1/2 relative">
+          <div class="ml-36 relative">
+            <IconBike class="relative z-10" />
+            <transition name="heart">
+              <IconHeart v-if="startAnimation" class="w-48 h-44 absolute top-14 left-24" />
+            </transition>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -147,8 +154,11 @@ import InputRadio from '@/components/ui/InputRadio.vue'
 import TextArea from '@/components/ui/InputTextArea.vue'
 import { ErrorMessage, Form } from 'vee-validate'
 import '@/assets/css/CommunicationQuestions.css'
+import IconBike from '@/components/icons/IconBike.vue'
+import IconHeart from '@/components/icons/IconHeart.vue'
 import axios from '@/plugins/axios/axios'
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
+let startAnimation = ref(false)
 let lastPage = ref('4')
 let firstName = localStorage.getItem('name')
 let lastName = localStorage.getItem('lastname')
@@ -164,6 +174,8 @@ let numberOfDaysFromOffice = JSON.parse(localStorage.getItem('number_of_days_fro
 let whatAboutMeetingsInLive = localStorage.getItem('what_about_meetings_in_live')
 let tellUsYourOpinionAboutUs = localStorage.getItem('tell_us_your_opinion_about_us')
 let Waiting = localStorage.getItem('waiting')
+
+onMounted(() => [(startAnimation.value = true)])
 
 let formData = new FormData()
 formData.append('first_name', firstName)

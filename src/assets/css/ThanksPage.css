@@ -1,0 +1,39 @@
+.thanks-enter-from {
+    opacity: 0;
+}
+
+.thanks-enter-to {
+    opacity: 1;
+}
+
+.thanks-enter-active {
+    transition: all 1s ease-in-out;
+}
+
+.leftstar-enter-from {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+}
+
+.leftstar-enter-to {
+    opacity: 1;
+}
+
+.leftstar-enter-active {
+    transition: all 0.5s ease-in-out;
+}
+
+.rightstar-enter-from {
+    position: absolute;
+    bottom: 70px;
+    right: 80px;
+}
+
+.rightstar-enter-to {
+    opacity: 1;
+}
+
+.rightstar-enter-active {
+    transition: all 0.5s ease-in-out;
+}
